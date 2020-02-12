@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/czaas/cra-mb-shared-ui/compare/v1.1.4...v1.2.0) (2020-02-12)
+
+
+### Features
+
+* added huskyrc file and updated readme due to jest config needing to be in package.json ([9443f01](https://github.com/czaas/cra-mb-shared-ui/commit/9443f016cb1d136980bb5dc9c818c23fd652a582))
+
 ### [1.1.4](https://github.com/czaas/cra-mb-shared-ui/compare/v1.1.3...v1.1.4) (2020-02-12)
 
 
