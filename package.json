@@ -1,6 +1,6 @@
 {
     "name": "cra-mb-shared-ui",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Create react app template for building shared UI's",
     "main": "index.js",
     "scripts": {
