@@ -2,9 +2,10 @@
     "name": "cra-template-mb-shared-ui",
     "version": "1.1.3",
     "description": "Create react app template for building shared UI's",
-    "main": "index.js",
+    "main": "template.json",
     "scripts": {
-        "version:bump": "standard-version"
+        "version:bump": "standard-version",
+        "deploy": "npm publish"
     },
     "author": "Cameron Zaas",
     "license": "ISC",
