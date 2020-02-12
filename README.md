@@ -10,9 +10,7 @@ yarn create react-app app-name --template cra-mb-shared-ui
 
 ## Configuring conventional commits
 
-Already included in the template is the packages needed for conventional commits. What you need to do to activate them is add the following to your `package.json`
-
-Sets up commitizen to parse your commits. Run `yarn add husky` then add the following to your `package.json`
+Run `yarn add husky` then add the following to your `package.json`
 
 ```
 "config": {
@@ -21,6 +19,18 @@ Sets up commitizen to parse your commits. Run `yarn add husky` then add the foll
     }
 }
 ```
+
+## Workflow
+
+By default CRA is used for building single page applications (SPA's). This template was made for the use of consuming a package as a bundle in existing applications. This means the default `yarn start` will not be used for building shared UI's. 
+
+### Viewing your work
+
+Using storybook you can work locally with different views by running `yarn storybook`. Included is a basic app to get you started. 
+
+### Testing
+
+This project is setup to use @testing-library/react for behavioral driven tests giving you the most confidence when shipping your application. 
 
 Setting up jest to transform SCSS and handle ES6 modules in our component library
 
@@ -43,21 +53,19 @@ Setting up jest to transform SCSS and handle ES6 modules in our component librar
 }
 ```
 
-## Workflow
+There are two commands included
 
-By default CRA is used for building single page applications (SPA's). This template was made for the use of consuming a package as a bundle in existing applications. This means the default `yarn start` will not be used for building shared UI's. 
+1. `yarn test:watch` which watches tests as you change them
+2. `yarn test:ci` which sets the continuous integration environment flag
 
-### Viewing your work
-
-Using storybook you can work locally with different views
-
-### Testing
-
-This project is setup to use @testing-library/react for behavioral driven tests giving you the most confidence when shipping your application. 
+You can pass `--coverage` to get the coverage output to either of these commands
 
 ### Styling
 
 This ships with the ability to use SCSS and postcss modules that automatically inject cross browser prefixes keeping your source code concise. 
+
+The convention needed is to name your file `*.module.scss`. Then you can import your styles as `import styles from '*.module.scss'` and consume them `<div className={styles.someClassName} />`
+. This will tell react to hash the class names to avoid CSS naming collisions. 
 
 ### Versioning strategy
 

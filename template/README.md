@@ -1,6 +1,3 @@
 # Your Shared UI
 
-- Add the purpose of the shared UI
-- Add todos
-- Add where it's consumed
-- etc
+Tell us the purpose of the shared UI and how to consume it and any other notes
