@@ -12,15 +12,33 @@ yarn create react-app app-name --template cra-mb-shared-ui
 
 Already included in the template is the packages needed for conventional commits. What you need to do to activate them is add the following to your `package.json`
 
+Sets up commitizen to parse your commits
+
 ```
  "config": {
     "commitizen": {
         "path": "./node_modules/cz-conventional-changelog"
     }
-},
-"husky": {
-    "hooks": {
-        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+}
+```
+
+Setting up jest to transform SCSS and handle ES6 modules in our component library
+
+```
+"jest": {
+    "collectCoverageFrom": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "!src/**/*.stories.tsx",
+        "!src/**/index.ts",
+        "!src/**/index.tsx",
+        "!src/**/*.d.ts"
+    ],
+    "transformIgnorePatterns": [
+        "./node_modules/(?!(@mindbody/*)/)"
+    ],
+    "moduleNameMapper": {
+        "\\.(css|less|scss|sass)$": "identity-obj-proxy"
     }
 }
 ```

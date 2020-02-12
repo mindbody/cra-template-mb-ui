@@ -5,6 +5,6 @@ export default {
     title: 'Your Shared UI',
 };
 
-export const App = () => {
+export const ExampleApp = () => {
     return <App />;
 };
