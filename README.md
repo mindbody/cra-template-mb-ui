@@ -12,10 +12,10 @@ yarn create react-app app-name --template cra-mb-shared-ui
 
 Already included in the template is the packages needed for conventional commits. What you need to do to activate them is add the following to your `package.json`
 
-Sets up commitizen to parse your commits
+Sets up commitizen to parse your commits. Run `yarn add husky` then add the following to your `package.json`
 
 ```
- "config": {
+"config": {
     "commitizen": {
         "path": "./node_modules/cz-conventional-changelog"
     }
