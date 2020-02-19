@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/czaas/cra-mb-shared-ui/compare/v1.3.1...v1.4.0) (2020-02-19)
+
+
+### Features
+
+* added prepping and finalizing scripts for versioning when deploying ([543b6da](https://github.com/czaas/cra-mb-shared-ui/commit/543b6da83d64fc719ba7c92447e225e5de8073b8))
+
+
+### Bug Fixes
+
+* exporting app as default so lazy loading works ([58b8371](https://github.com/czaas/cra-mb-shared-ui/commit/58b8371550e97a230ed9a67ccfdf2cc3a8d8cbb2))
+
 ### [1.3.1](https://github.com/czaas/cra-mb-shared-ui/compare/v1.3.0...v1.3.1) (2020-02-12)
 
 ## [1.3.0](https://github.com/czaas/cra-mb-shared-ui/compare/v1.2.0...v1.3.0) (2020-02-12)
