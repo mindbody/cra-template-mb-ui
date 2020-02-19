@@ -13,4 +13,4 @@ RUN yarn install --pure-lockfile
 RUN yarn test:ci
 
 # Build packages
-RUN yarn build:ci
+RUN yarn build:shared-ui

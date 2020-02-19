@@ -12,14 +12,6 @@ yarn create react-app app-name --template cra-mb-shared-ui
 
 Run `yarn add husky` then add the following to your `package.json`
 
-```
-"config": {
-    "commitizen": {
-        "path": "./node_modules/cz-conventional-changelog"
-    }
-}
-```
-
 ## Workflow
 
 By default CRA is used for building single page applications (SPA's). This template was made for the use of consuming a package as a bundle in existing applications. This means the default `yarn start` will not be used for building shared UI's. 
@@ -32,7 +24,7 @@ Using storybook you can work locally with different views by running `yarn story
 
 This project is setup to use @testing-library/react for behavioral driven tests giving you the most confidence when shipping your application. 
 
-Setting up jest to transform SCSS and handle ES6 modules in our component library
+Setting up jest to transform SCSS and handle ES6 modules from our component library you will need to add this to your package.json
 
 ```
 "jest": {
