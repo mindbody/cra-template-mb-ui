@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://github.com/czaas/cra-mb-shared-ui/compare/v1.4.0...v1.4.1) (2020-02-19)
+
+
+### Bug Fixes
+
+* removed non existent package ([c7ac428](https://github.com/czaas/cra-mb-shared-ui/commit/c7ac4287ff84d60c5ede8ecedad8878548811d08))
+
 ## [1.4.0](https://github.com/czaas/cra-mb-shared-ui/compare/v1.3.1...v1.4.0) (2020-02-19)
 
 
