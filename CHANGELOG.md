@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/czaas/cra-mb-shared-ui/compare/v1.4.1...v1.5.0) (2020-03-05)
+
+
+### Features
+
+* updated app to use both CRA default build and instructions on using storybook for a shared ui ([134b451](https://github.com/czaas/cra-mb-shared-ui/commit/134b45172fbffc357e3a85082cb5f4f104ecaa9c))
+
 ### [1.4.1](https://github.com/czaas/cra-mb-shared-ui/compare/v1.4.0...v1.4.1) (2020-02-19)
 
 
