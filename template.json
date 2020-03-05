@@ -26,7 +26,7 @@
     },
     "scripts": {
         "version:bump": "standard-version",
-        "build:shared-ui": "yarn prep-shared-ui && react-scripts build && yarn finalize-shared-ui",
+        "build:ui": "yarn prep-shared-ui && react-scripts build && yarn finalize-shared-ui",
         "test:ci": "cross-env CI=true react-scripts test --transformIgnorePatterns \"node_modules/(?!(@mbkit/*)/)\" --env=jsdom",
         "test:watch": "react-scripts test --transformIgnorePatterns \"node_modules/(?!(@mbkit/*)/)\" --env=jsdom",
         "storybook": "start-storybook -p 9009 -s public",

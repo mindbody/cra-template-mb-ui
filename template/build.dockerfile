@@ -11,7 +11,7 @@ RUN yarn install --pure-lockfile
 FROM prep as build
 
 # Build packages
-RUN yarn build:shared-ui
+RUN yarn build:ui
 
 FROM base as artifact
 COPY --from=build /prepping-ui/build /ui/arcusOutput

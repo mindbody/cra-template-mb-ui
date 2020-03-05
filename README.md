@@ -10,15 +10,14 @@ yarn create react-app app-name --template cra-mb-shared-ui
 
 ## Configuring conventional commits
 
-Run `yarn add husky` then add the following to your `package.json`
+Run `yarn add husky`. The `.huskyrc.json` is what triggers the conventional commits git hook to run.
 
 ## Workflow
 
-By default CRA is used for building single page applications (SPA's). This template was made for the use of consuming a package as a bundle in existing applications. This means the default `yarn start` will not be used for building shared UI's. 
+You have two options of how you want to build your UI
 
-### Viewing your work
-
-Using storybook you can work locally with different views by running `yarn storybook`. Included is a basic app to get you started. 
+- Using CRA default `yarn start` which will load your application as you would expect CRA to do. 
+- Using storybook by adding a `*.stories.tsx` and viewing your application in storybook allowing for multiple instances and setups along with individual components.
 
 ### Testing
 

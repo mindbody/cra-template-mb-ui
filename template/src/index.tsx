@@ -1,18 +1,14 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-const App = lazy(() => import('./App'));
+import App from './App';
 
-declare global {
-    interface Window {
-        loadSharedUi: (mount: HTMLElement | null) => void;
-    }
-}
+/**
+ * If you are loading the UI from within the consuming application and need special attention or to pass specific data,
+ * replace the mount below with a unique function that you can call from the consuming application e.g.
+ *
+ * window.loadMyApplicationName = (mount = document.getElementById('root'), { ...your arguments needed }) => {
+ *      ReactDOM.render(<App {...pass arguments along} />, mount);
+ * }
+ */
 
-window.loadSharedUi = (mount = document.getElementById('root')) => {
-    ReactDOM.render(
-        <Suspense fallback={'Loading...'}>
-            <App />
-        </Suspense>,
-        mount,
-    );
-};
+ReactDOM.render(<App />, document.getElementById('root'));

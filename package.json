@@ -1,7 +1,7 @@
 {
-    "name": "cra-template-mb-shared-ui",
+    "name": "cra-template-mb-ui",
     "version": "1.4.1",
-    "description": "Create react app template for building shared UI's",
+    "description": "Create react app template for building UI's",
     "main": "template.json",
     "scripts": {
         "version:bump": "standard-version",
