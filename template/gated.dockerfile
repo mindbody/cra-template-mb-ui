@@ -9,8 +9,7 @@ COPY . ./prepping-ui/
 WORKDIR /prepping-ui
 RUN yarn install --pure-lockfile
 
-# Run tests
-RUN yarn test:ci
-
 # Build packages
 RUN yarn build:ui
+
+ENTRYPOINT ["sh", "./ci.tests.sh"]
