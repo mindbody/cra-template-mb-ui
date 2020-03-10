@@ -1,6 +1,6 @@
 {
     "name": "cra-template-mb-ui",
-    "version": "1.6.0",
+    "version": "1.6.1",
     "description": "Create react app template for building UI's",
     "main": "template.json",
     "scripts": {
