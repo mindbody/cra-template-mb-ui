@@ -5,7 +5,7 @@
 First create your react app using this template with create-react-app (CRA)
 
 ```
-yarn create react-app app-name --template cra-mb-shared-ui
+npx create-react-app your-app-name --template mb-ui
 ```
 
 ## Configuring conventional commits
