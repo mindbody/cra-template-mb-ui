@@ -1,6 +1,6 @@
 # CRA MB Shared UI
 
-This template will get you started with all features in CRA as well as:
+This template will get you started with all [create-react-app](https://create-react-app.dev/) features as well as:
 
 - TypeScript
 - SCSS
@@ -59,7 +59,7 @@ The convention needed is to name your file `*.module.scss`. Then you can import 
 
 **Using conventional commits**
 
-Follow the (conventional commits)[https://www.conventionalcommits.org/en/v1.0.0/#summary] commit template for every commit you make. 
+Follow the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) commit template for every commit you make. 
 
 This will allow you to run the command `yarn version:bump` that will go back through your commits, save them to a changelog and update your package.json automatically. Do this before every PR merge when building a shared UI so the ADO pipeline will deploy a versioned bundle of your application. 
 
