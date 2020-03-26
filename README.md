@@ -1,5 +1,13 @@
 # CRA MB Shared UI
 
+This template will get you started with all features in CRA as well as:
+
+- TypeScript
+- SCSS
+- Storybook (if you want to use it)
+- React Testing Library (see below for setting up test coverage)
+- Conventional Commits (see below for some setup required)
+
 ## Getting Started
 
 First create your react app using this template with create-react-app (CRA)
@@ -7,10 +15,6 @@ First create your react app using this template with create-react-app (CRA)
 ```
 npx create-react-app your-app-name --template mb-ui
 ```
-
-## Configuring conventional commits
-
-Run `yarn add husky`. The `.huskyrc.json` is what triggers the conventional commits git hook to run.
 
 ## Workflow
 
@@ -21,9 +25,14 @@ You have two options of how you want to build your UI
 
 ### Testing
 
+1. `yarn test:watch` which watches tests as you change them
+2. `yarn test:ci` which sets the continuous integration environment flag
+
+You can pass `--coverage` to get the coverage output to either of these commands
+
 This project is setup to use @testing-library/react for behavioral driven tests giving you the most confidence when shipping your application. 
 
-Setting up jest to transform SCSS and handle ES6 modules from our component library you will need to add this to your package.json
+Add this to your `package.json` to collect coverage from some files found in your `src` directory:
 
 ```
 "jest": {
@@ -35,21 +44,9 @@ Setting up jest to transform SCSS and handle ES6 modules from our component libr
         "!src/**/index.tsx",
         "!src/**/*.d.ts"
     ],
-    "transformIgnorePatterns": [
-        "./node_modules/(?!(@mindbody/*)/)"
-    ],
-    "moduleNameMapper": {
-        "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-    }
 }
 ```
 
-There are two commands included
-
-1. `yarn test:watch` which watches tests as you change them
-2. `yarn test:ci` which sets the continuous integration environment flag
-
-You can pass `--coverage` to get the coverage output to either of these commands
 
 ### Styling
 
@@ -60,4 +57,12 @@ The convention needed is to name your file `*.module.scss`. Then you can import 
 
 ### Versioning strategy
 
-Every commit you make will use conventional commits. This allows us to run a command line utility that will go back through your commits, save them to a changelog and update your package.json automatically. 
+**Using conventional commits**
+
+Follow the (conventional commits)[https://www.conventionalcommits.org/en/v1.0.0/#summary] commit template for every commit you make. 
+
+This will allow you to run the command `yarn version:bump` that will go back through your commits, save them to a changelog and update your package.json automatically. Do this before every PR merge when building a shared UI so the ADO pipeline will deploy a versioned bundle of your application. 
+
+**Configuring conventional commits**
+
+Run `yarn add husky`. The `.huskyrc.json` is what triggers the conventional commits git hook to run.
