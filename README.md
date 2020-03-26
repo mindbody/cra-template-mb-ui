@@ -1,4 +1,4 @@
-# CRA MB Shared UI
+# Create-React-App Template | Mindbody UI
 
 This template will get you started with all [create-react-app](https://create-react-app.dev/docs/getting-started) features as well as:
 
@@ -25,8 +25,8 @@ You have two options of how you want to build your UI
 
 ### Testing
 
-1. `yarn test:watch` which watches tests as you change them
-2. `yarn test:ci` which sets the continuous integration environment flag
+1. `yarn test:watch` watches tests as you change them
+2. `yarn test:ci` sets the continuous integration environment flag
 
 You can pass `--coverage` to get the coverage output to either of these commands
 
@@ -61,7 +61,7 @@ The convention needed is to name your file `*.module.scss`. Then you can import 
 
 Follow the [conventional commit template](https://www.conventionalcommits.org/en/v1.0.0/#summary) for each commit. 
 
-This will allow you to run the command `yarn version:bump` that will go back through your commits, save them to a changelog and update your package.json automatically. Do this before every PR merge when building a shared UI so the ADO pipeline will deploy a versioned bundle of your application. 
+This allows you to run `yarn version:bump` that saves your commits to a changelog and updates your package.json automatically. Do this before merging a pull request to deploy a versioned bundle of your shared UI application.
 
 **Configuring conventional commits**
 
