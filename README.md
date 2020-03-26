@@ -1,6 +1,6 @@
 # CRA MB Shared UI
 
-This template will get you started with all [create-react-app](https://create-react-app.dev/) features as well as:
+This template will get you started with all [create-react-app](https://create-react-app.dev/docs/getting-started) features as well as:
 
 - TypeScript
 - SCSS
