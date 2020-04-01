@@ -23,6 +23,32 @@ You have two options of how you want to build your UI
 - Using CRA default `yarn start` which will load your application as you would expect CRA to do. 
 - Using storybook by adding a `*.stories.tsx` and viewing your application in storybook allowing for multiple instances and setups along with individual components.
 
+### Deployment
+
+**Single Page Application (SPA)**
+
+Use the `yarn build` to produce a `build/{all application assets}` directory which is the assets needed to publish. 
+
+**Shared UI**
+
+If you are building a shared UI you will need to follow the version strategy described below. Before each PR completion you need to update the version using the `yarn version:bump` script included in this template. For bundling use the `yarn build:ui` which does a check to see if the version exists on the CDN you are deploying to. 
+
+Create a `.env` file for the build pipeline with the following:
+
+```
+PUBLIC_URL=https://your.cdn.com/path/to/assets/
+```
+
+This will produce a `build/1.2.3/{all application assets}` along with a `build/1.2.3/app.js` which you will reference in the consuming application. 
+
+An example of consumption if your `.env` file looked like the example above and your package version contained `1.2.3`:
+
+```html
+<script src="https://your.cdn.com/path/to/assets/1.2.3/app.js"></script>
+```
+
+_For local development you may want a different `PUBLIC_URL`, if so you can create a `.env.local` with overrides needed. Please see the [offical documentation](https://create-react-app.dev/docs/adding-custom-environment-variables/#what-other-env-files-can-be-used) for priority and other development features this file can do for you._
+
 ### Testing
 
 1. `yarn test:watch` watches tests as you change them
