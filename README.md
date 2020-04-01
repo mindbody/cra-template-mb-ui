@@ -27,7 +27,7 @@ You have two options of how you want to build your UI
 
 **Single Page Application (SPA)**
 
-Use the `yarn build` to produce a `build/{all application assets}` directory which is the assets needed to publish. 
+Use the `yarn build` to produce a `build/{all application assets}` directory which contains the assets needed to publish. 
 
 **Shared UI**
 
