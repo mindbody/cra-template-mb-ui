@@ -2,12 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [1.6.2](https://github.com/czaas/cra-mb-shared-ui/compare/v1.6.1...v1.6.2) (2020-04-28)
+### [1.6.2](https://github.com/czaas/cra-mb-shared-ui/compare/v1.6.1...v1.6.2) (2020-04-01)
 
 
 ### Bug Fixes
 
-* updated shared scripts for versioned deploys and updated gated dockerfile ([af9aa87](https://github.com/czaas/cra-mb-shared-ui/commit/af9aa87996f13188f89e7c8d483704ed31360a6d))
+* removed unneeded transform ignore for mbkit ([a2327f5](https://github.com/czaas/cra-mb-shared-ui/commit/a2327f57228a6afd30182f45c257af082f2d6080))
 
 ### [1.6.1](https://github.com/czaas/cra-mb-shared-ui/compare/v1.6.0...v1.6.1) (2020-03-10)
 
