@@ -22,6 +22,7 @@ You have two options of how you want to build your UI
 
 - Using CRA default `yarn start` which will load your application as you would expect CRA to do. 
 - Using storybook by adding a `*.stories.tsx` and viewing your application in storybook allowing for multiple instances and setups along with individual components.
+- Use the docker files to determine which yarn scripts are run during gated/builds
 
 ### Deployment
 
