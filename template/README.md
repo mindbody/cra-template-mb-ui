@@ -43,18 +43,20 @@ If you change `root` to another name in `index.tsx`, be sure to change it here a
 
 ### Passing Parameters
 
-To pass parameters into the shared UI from the consuming application:
+Parameters can be passed into the shared UI a couple of different ways. One option is to set a global variable (`window.siteLocale = 'en';`) in the consuming application and read that variable from the shared UI.
+
+For passing multiple parameters, here's another option:
 
 #### Within the Shared UI `index.tsx`
 
 ```
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MySharedUI from './MySharedUI/MySharedUI';
+import MySharedUi from './MySharedUi/MySharedUi';
 
 declare global {
   interface Window {
-    loadSharedUI: any;
+    loadSharedUi: (data: Data, mount: HTMLElement | null) => void;
   }
 }
 
@@ -62,19 +64,54 @@ export type Data = {
   userId: string;
 };
 
-// Parameters to pass
-const data = {
-  userId: '123',
+window.loadSharedUi = (data: Data, mount: HTMLElement | null = document.getElementById('root')) => {
+  ReactDOM.render(<MySharedUi data={data} />, mount);
+};
+```
+
+### Within the Shared UI `MySharedUi.tsx`
+
+```
+import { Data } from '..';
+
+type MySharedUiProps = {
+  data: Data;
 };
 
-window.loadSharedUI = (data: Data, mount = document.getElementById('root')) => {
-  ReactDOM.render(<MySharedUI data={data} />, mount);
+export const MySharedUi = (props: MySharedUiProps) => {
+  const { userId } = props.data;
+
+  // The props can be used in here, example:
+  return (
+    <p>{userId}</p>
+  );
 };
+
+export default MySharedUi;
 ```
 
 #### Within the Consuming Application
 
 ```
 <script type="text/javascript" src="https://static-content.mindbodyonline.com/ui/my-shared-ui/0.1.1/app.js"></script>
-<script>window.loadSharedUI(data)</script> // This must load after the first script
+
+<script>
+  const data = {
+    userId: '123';
+  };
+
+  const loadApp = () => {
+    try {
+      window.loadSharedUi(data);
+    } catch (e) {
+      setTimeout(() => loadApp(), 100);
+    }
+  }
+
+  loadApp();
+</script>
+```
+And place the `root` where the shared UI should load in the consuming application:
+```
+<div id="root"></div>
 ```
