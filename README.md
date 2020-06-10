@@ -90,6 +90,8 @@ Follow the [conventional commit template](https://www.conventionalcommits.org/en
 
 This allows you to run `yarn version:bump` that saves your commits to a changelog and updates your package.json automatically. Do this before merging a pull request to deploy a versioned bundle of your shared UI application.
 
+In order for this command to work properly (`BREAKING CHANGE`/`feat`/`fix` to update major/minor/patch) your application version must be at least at version 1.0.0
+
 **Configuring conventional commits**
 
 Run `yarn add husky`. The `.huskyrc.json` is what triggers the conventional commits git hook to run.
