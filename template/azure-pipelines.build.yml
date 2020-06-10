@@ -1,0 +1,30 @@
+variables:
+  dockerFile: '**/ci.build.dockerfile'
+  urlPath: '{Your url path here}'
+
+trigger: 
+  - master
+
+resources:
+  repositories:
+  - repository: templateLibrary
+    type: git
+    name: Mindbody.ADOS.Templates
+
+stages:
+
+- stage: buildUI
+  jobs:
+  - template: /ci/public/shared_ui_build.yml@templateLibrary
+    parameters: 
+      dockerFile: $(dockerFile)
+
+- stage: DeployUi
+  dependsOn: buildUI
+  jobs:
+  - template: /cd/public/akamai/deploy_to_static_ui_cdn.yml@templateLibrary
+    parameters:
+      urlPath: $(urlPath)
+
+
+      

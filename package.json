@@ -5,7 +5,8 @@
     "main": "template.json",
     "scripts": {
         "version:bump": "standard-version",
-        "deploy": "npm publish"
+        "deploy": "npm publish",
+        "commit": "git-cz"
     },
     "author": "Cameron Zaas",
     "license": "ISC",

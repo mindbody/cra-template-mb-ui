@@ -33,6 +33,7 @@
         "test:ci": "cross-env CI=true react-scripts test --env=jsdom --reporters=default --reporters=jest-trx-results-processor",
         "test:watch": "react-scripts test --env=jsdom",
         "storybook": "start-storybook -p 9009 -s public",
-        "storybook:build": "build-storybook -s public"
+        "storybook:build": "build-storybook -s public",
+        "commit": "git-cz"
     }
 }
