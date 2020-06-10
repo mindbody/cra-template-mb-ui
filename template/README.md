@@ -27,7 +27,7 @@ For jest you will need to add this to your package.json
 }
 ```
 
-## Implementation Notes
+## Shared UI Implementation Notes
 
 With a typical implementation, the consuming application can pull in your shared UI using two lines of code:
 
@@ -41,77 +41,76 @@ Be sure to adjust the name and version to match your shared UI.
 ```
 If you change `root` to another name in `index.tsx`, be sure to change it here as well.
 
-### Passing Parameters
+### Getting Data
 
-Parameters can be passed into the shared UI a couple of different ways. One option is to set a global variable (`window.siteLocale = 'en';`) in the consuming application and read that variable from the shared UI.
+There are 3 ways to get data into the shared UI from the consuming application:
 
-For passing multiple parameters, here's another option:
+1. Use an API endpoint
+2. Mount the app on script load and get data from a window variable (whether it be a single value, array, or object), e.g. `window.siteLocale = 'en';`
+3. Mount the app from within consuming application and pass parameters
 
-#### Within the Shared UI `index.tsx`
+#### (3) Passing Parameters
 
-```
-import React from 'react';
-import ReactDOM from 'react-dom';
-import MySharedUi from './MySharedUi/MySharedUi';
+1. Within the shared UI `index.tsx`
+    ```
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import MySharedUi from './MySharedUi/MySharedUi';
 
-declare global {
-  interface Window {
-    loadSharedUi: (data: Data, mount: HTMLElement | null) => void;
-  }
-}
-
-export type Data = {
-  userId: string;
-};
-
-window.loadSharedUi = (data: Data, mount: HTMLElement | null = document.getElementById('root')) => {
-  ReactDOM.render(<MySharedUi data={data} />, mount);
-};
-```
-
-### Within the Shared UI `MySharedUi.tsx`
-
-```
-import { Data } from '..';
-
-type MySharedUiProps = {
-  data: Data;
-};
-
-export const MySharedUi = (props: MySharedUiProps) => {
-  const { userId } = props.data;
-
-  // The props can be used in here, example:
-  return (
-    <p>{userId}</p>
-  );
-};
-
-export default MySharedUi;
-```
-
-#### Within the Consuming Application
-
-```
-<script type="text/javascript" src="https://static-content.mindbodyonline.com/ui/my-shared-ui/0.1.1/app.js"></script>
-
-<script>
-  const data = {
-    userId: '123';
-  };
-
-  const loadApp = () => {
-    try {
-      window.loadSharedUi(data);
-    } catch (e) {
-      setTimeout(() => loadApp(), 100);
+    declare global {
+      interface Window {
+        loadSharedUi: (data: Data, mount: HTMLElement | null) => void;
+      }
     }
-  }
 
-  loadApp();
-</script>
-```
-And place the `root` where the shared UI should load in the consuming application:
-```
-<div id="root"></div>
-```
+    export type Data = {
+      userId: string;
+    };
+
+    window.loadSharedUi = (data: Data, mount: HTMLElement | null = document.getElementById('root')) => {
+      ReactDOM.render(<MySharedUi data={data} />, mount);
+    };
+    ```
+2. Within the shared UI `MySharedUi.tsx`
+    ```
+    import { Data } from '..';
+
+    type MySharedUiProps = {
+      data: Data;
+    };
+
+    export const MySharedUi = (props: MySharedUiProps) => {
+      const { userId } = props.data;
+
+      // The props can be used in here, example:
+      return (
+        <p>{userId}</p>
+      );
+    };
+
+    export default MySharedUi;
+    ```
+3. Within the consuming application, load the app and pass in the data
+    ```
+    <script type="text/javascript" src="https://static-content.mindbodyonline.com/ui/my-shared-ui/0.1.1/app.js"></script>
+
+    <script>
+      const data = {
+        userId: '123';
+      };
+
+      const loadApp = () => {
+        try {
+          window.loadSharedUi(data);
+        } catch (e) {
+          setTimeout(() => loadApp(), 100);
+        }
+      }
+
+      loadApp();
+    </script>
+    ```
+4. Within the consuming application, place the `root` where the shared UI should load
+    ```
+    <div id="root"></div>
+    ```
