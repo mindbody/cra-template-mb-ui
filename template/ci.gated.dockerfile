@@ -10,9 +10,6 @@ RUN yarn install --pure-lockfile
 # Build packages
 FROM prep as build
 
-# Run tests
-RUN yarn test:ci
-
 # Build packages
 RUN yarn gated:ui
 

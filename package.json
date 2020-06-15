@@ -14,13 +14,13 @@
         "type": "git",
         "url": "https://github.com/czaas/cra-mb-shared-ui"
     },
-    "dependencies": {
+    "devDependencies": {
         "@commitlint/cli": "^8.3.5",
         "@commitlint/config-conventional": "^8.3.4",
         "commitizen": "^4.0.3",
         "cz-conventional-changelog": "^3.1.0",
-        "husky": "^4.2.2",
-        "standard-version": "^7.1.0"
+        "standard-version": "^7.1.0",
+        "husky": "^4.2.5"
     },
     "config": {
         "commitizen": {
