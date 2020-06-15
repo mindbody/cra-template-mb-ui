@@ -5,36 +5,6 @@ Tell us the purpose of the shared UI and how to consume it and any other notes
 ## You're almost set to go
 
 
-### Conventional commits 
-
-You'll need to run `yarn add husky` to get conventional commits to work correctly and add the following to your package.json
-
-```
-"config": {
-    "commitizen": {
-        "path": "./node_modules/cz-conventional-changelog"
-    }
-}
-```
-
-### Testing
-
-For jest you will need to add this to your package.json
-
-```
-"jest": {
-    "collectCoverageFrom": [
-        "src/**/*.ts",
-        "src/**/*.tsx",
-        "!src/**/*.stories.tsx",
-        "!src/**/*.d.ts"
-    ],
-    "moduleNameMapper": {
-        "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-    }
-}
-```
-
 ### Setting up environment file for shared UI
 
 Create a `.env` file for the build pipeline with the following:

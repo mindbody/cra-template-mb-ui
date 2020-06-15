@@ -1,40 +1,54 @@
 {
-    "dependencies": {
-        "@testing-library/jest-dom": "^5.0.2",
-        "@testing-library/react": "^9.4.0",
-        "@testing-library/user-event": "^7.1.2",
-        "@types/jest": "^24.9.1",
-        "@types/node": "^12.0.0",
-        "jest-canvas-mock": "^2.2.0",
-        "@storybook/preset-create-react-app": "^1.5.2",
-        "@storybook/addon-actions": "^5.3.9",
-        "@storybook/addon-knobs": "^5.3.9",
-        "@storybook/addon-links": "^5.3.9",
-        "@storybook/addons": "^5.3.9",
-        "@storybook/react": "^5.3.9",
-        "cra-shared-ui-scripts": "^1.4.1",
-        "cross-env": "^7.0.0",
-        "@commitlint/cli": "^8.3.5",
-        "@commitlint/config-conventional": "^8.3.4",
-        "commitizen": "^4.0.3",
-        "cz-conventional-changelog": "^3.1.0",
-        "standard-version": "^7.1.0",
-        "@types/react": "^16.9.0",
-        "@types/react-dom": "^16.9.0",
-        "node-sass": "^4.13.1",
-        "typescript": "~3.7.2",
-        "mkdirp": "^1.0.3",
-        "move-cli": "^1.2.1",
-        "jest-trx-results-processor": "^2.0.0"
-    },
-    "scripts": {
-        "version:bump": "standard-version",
-        "build:ui": "yarn prep-shared-ui && react-scripts build && yarn finalize-shared-ui",
-        "gated:ui": "yarn test:ci && yarn build:ui",
-        "test:ci": "cross-env CI=true react-scripts test --env=jsdom --reporters=default --reporters=jest-trx-results-processor",
-        "test:watch": "react-scripts test --env=jsdom",
-        "storybook": "start-storybook -p 9009 -s public",
-        "storybook:build": "build-storybook -s public",
-        "commit": "git-cz"
+    "package": {
+        "dependencies": {
+            "@testing-library/jest-dom": "^5.0.2",
+            "@testing-library/react": "^9.4.0",
+            "@testing-library/user-event": "^7.1.2",
+            "@types/jest": "^24.9.1",
+            "@types/node": "^12.0.0",
+            "jest-canvas-mock": "^2.2.0",
+            "@storybook/preset-create-react-app": "^1.5.2",
+            "@storybook/addon-actions": "^5.3.9",
+            "@storybook/addon-knobs": "^5.3.9",
+            "@storybook/addon-links": "^5.3.9",
+            "@storybook/addons": "^5.3.9",
+            "@storybook/react": "^5.3.9",
+            "cra-shared-ui-scripts": "^1.4.1",
+            "cross-env": "^7.0.0",
+            "@commitlint/cli": "^8.3.5",
+            "@commitlint/config-conventional": "^8.3.4",
+            "commitizen": "^4.0.3",
+            "cz-conventional-changelog": "^3.1.0",
+            "standard-version": "^7.1.0",
+            "@types/react": "^16.9.0",
+            "@types/react-dom": "^16.9.0",
+            "node-sass": "^4.13.1",
+            "typescript": "~3.7.2",
+            "mkdirp": "^1.0.3",
+            "move-cli": "^1.2.1",
+            "jest-trx-results-processor": "^2.0.0",
+            "husky": "^4.2.5"
+        },
+        "scripts": {
+            "version:bump": "standard-version",
+            "build:ui": "yarn prep-shared-ui && react-scripts build && yarn finalize-shared-ui",
+            "gated:ui": "yarn test:ci && yarn build:ui",
+            "test:ci": "cross-env CI=true react-scripts test --env=jsdom --reporters=default --reporters=jest-trx-results-processor",
+            "test:watch": "react-scripts test --env=jsdom",
+            "storybook": "start-storybook -p 9009 -s public",
+            "storybook:build": "build-storybook -s public",
+            "commit": "git-cz"
+        },
+        "jest": {
+            "collectCoverageFrom": ["src/**/*.ts", "src/**/*.tsx", "!src/**/*.stories.tsx", "!src/**/*.d.ts"],
+            "moduleNameMapper": {
+                "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+            }
+        },
+        "config": {
+            "commitizen": {
+                "path": "./node_modules/cz-conventional-changelog"
+            }
+        }
     }
 }
