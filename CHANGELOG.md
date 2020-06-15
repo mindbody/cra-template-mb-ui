@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/czaas/cra-mb-shared-ui/compare/v1.7.1...v1.8.0) (2020-06-15)
+
+
+### Features
+
+* updated template to not have any dependencies and removed the need to add anything to package.json ([e45094c](https://github.com/czaas/cra-mb-shared-ui/commit/e45094c8b8c1062058587c6a81d599e09602ad95))
+
+
+### Bug Fixes
+
+* updated dependency and removed unneeded dependency ([6869c30](https://github.com/czaas/cra-mb-shared-ui/commit/6869c30d96e6fa9b3223c0f6e365118b4ad45b0b))
+
 ### [1.7.1](https://github.com/czaas/cra-mb-shared-ui/compare/v1.7.0...v1.7.1) (2020-06-15)
 
 
