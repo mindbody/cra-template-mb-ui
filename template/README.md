@@ -14,12 +14,7 @@ For jest you will need to add this to your package.json
         "src/**/*.ts",
         "src/**/*.tsx",
         "!src/**/*.stories.tsx",
-        "!src/**/index.ts",
-        "!src/**/index.tsx",
         "!src/**/*.d.ts"
-    ],
-    "transformIgnorePatterns": [
-        "./node_modules/(?!(@mbkit/*)/)"
     ],
     "moduleNameMapper": {
         "\\.(css|less|scss|sass)$": "identity-obj-proxy"

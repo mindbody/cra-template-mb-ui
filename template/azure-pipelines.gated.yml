@@ -1,0 +1,18 @@
+variables:
+  dockerFile: '**/ci.gated.dockerfile'
+
+trigger: 
+  - none
+
+resources:
+  repositories:
+  - repository: templateLibrary
+    type: git
+    name: Mindbody.ADOS.Templates
+
+stages:
+- stage: buildUI
+  jobs:
+  - template: /ci/public/shared_ui_build.yml@templateLibrary
+    parameters: 
+      dockerFile: $(dockerFile)

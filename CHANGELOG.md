@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/czaas/cra-mb-shared-ui/compare/v1.6.4...v1.7.0) (2020-06-10)
+
+
+### Features
+
+* added azure pipeline templates to repo for easier setup ([bbd0d25](https://github.com/czaas/cra-mb-shared-ui/commit/bbd0d2540bbecc5c6e16eec301bcf3a18df7f5c2))
+
+
+### Bug Fixes
+
+* updated gated dockerfile template and updated dependency version ([a6d408b](https://github.com/czaas/cra-mb-shared-ui/commit/a6d408b5857591cf92dbf58a4eb8a0fff380ed47))
+
 ### [1.6.4](https://github.com/czaas/cra-mb-shared-ui/compare/v1.6.2...v1.6.4) (2020-05-14)
 
 ### [1.6.3](https://github.com/czaas/cra-mb-shared-ui/compare/v1.6.2...v1.6.3) (2020-05-14)
