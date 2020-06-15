@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/czaas/cra-mb-shared-ui/compare/v1.8.0...v1.9.0) (2020-06-15)
+
+
+### Features
+
+* started template at v1 so conventional commits work properly and updated documentation to include updating yaml files ([12b9f3b](https://github.com/czaas/cra-mb-shared-ui/commit/12b9f3ba2ba514bcf14cba80c125598498cb47f4))
+
 ## [1.8.0](https://github.com/czaas/cra-mb-shared-ui/compare/v1.7.1...v1.8.0) (2020-06-15)
 
 
