@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.1](https://github.com/czaas/cra-mb-shared-ui/compare/v1.7.0...v1.7.1) (2020-06-15)
+
+
+### Bug Fixes
+
+* added gated ui command for template and updated commit lint ([64f9b52](https://github.com/czaas/cra-mb-shared-ui/commit/64f9b52d57cca6ed2ea8d98eee74016356429118))
+* renamed husky file ([9b6466d](https://github.com/czaas/cra-mb-shared-ui/commit/9b6466dc7c0b3867f64bc6f98f00d9a2f5e6f6f6))
+
 ## [1.7.0](https://github.com/czaas/cra-mb-shared-ui/compare/v1.6.4...v1.7.0) (2020-06-10)
 
 
