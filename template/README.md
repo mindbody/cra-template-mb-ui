@@ -4,6 +4,7 @@ Tell us the purpose of the shared UI and how to consume it and any other notes
 
 ## You're almost set to go
 
+You'll need to run `yarn add husky` to get conventional commits to work correctly. This needs to happen after the app is initialized because it does the initial commit for you.
 
 ### Setting up environment file for shared UI
 
