@@ -1,5 +1,6 @@
 {
     "package": {
+        "version": "1.0.0",
         "dependencies": {
             "@testing-library/jest-dom": "^5.0.2",
             "@testing-library/react": "^9.4.0",
