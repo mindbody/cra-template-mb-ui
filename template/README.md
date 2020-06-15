@@ -4,7 +4,20 @@ Tell us the purpose of the shared UI and how to consume it and any other notes
 
 ## You're almost set to go
 
-You'll need to run `yarn add husky` to get conventional commits to work correctly
+
+### Conventional commits 
+
+You'll need to run `yarn add husky` to get conventional commits to work correctly and add the following to your package.json
+
+```
+"config": {
+    "commitizen": {
+        "path": "./node_modules/cz-conventional-changelog"
+    }
+}
+```
+
+### Testing
 
 For jest you will need to add this to your package.json
 
@@ -21,6 +34,16 @@ For jest you will need to add this to your package.json
     }
 }
 ```
+
+### Setting up environment file for shared UI
+
+Create a `.env` file for the build pipeline with the following:
+
+```
+PUBLIC_URL=https://static-content.mindbodyonline.com/ui/path/to/shared-ui/
+```
+
+More [details about environment files](https://github.com/mindbody/cra-template-mb-ui#deployment) can be found on the templates readme
 
 ## Shared UI Implementation Notes
 
