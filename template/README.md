@@ -1,10 +1,8 @@
 # Your Shared UI
 
-Tell us the purpose of the shared UI and how to consume it and any other notes
+## You're almost set to build
 
-## You're almost set to go
-
-1. You'll need to run `yarn add husky` to get conventional commits to work correctly. This needs to happen after the app is initialized because it does the initial commit for you.
+1. Run `yarn add husky` to get conventional commits to work. This needs to happen after the app is initialized because it does the initial commit for you.
 2. Create a `.env` file for the build pipeline with the following:
 ```
 PUBLIC_URL=https://static-content.mindbodyonline.com/ui/path/to/shared-ui/
