@@ -1,19 +1,24 @@
 FROM node:12.14-alpine as base
 RUN apk update && apk add git && apk add bash && apk add curl
 
-# Install depencencies
+# Copy all files over
 FROM base as prep
-COPY . ./prepping-ui/
-WORKDIR /prepping-ui/
-RUN yarn install --pure-lockfile
+WORKDIR /prepping-ui
+COPY . .
 
-# Build packages
-FROM prep as build
+# Install depencencies
+RUN yarn install --pure-lockfile
 
 # Build packages
 RUN yarn gated:ui
 
 FROM base as artifact
-COPY --from=build /prepping-ui/build /ui/arcusOutput
+WORKDIR /ui
+
+RUN mkdir -p /ui/arcusOutput
+
+COPY --from=prep /prepping-ui/build /ui/arcusOutput
+
+COPY --from=prep /prepping-ui/ /ui
 
 ENTRYPOINT ["sh", "./ci.tests.sh"]

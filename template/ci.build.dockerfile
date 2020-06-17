@@ -3,15 +3,20 @@ RUN apk update && apk add git && apk add bash && apk add curl
 
 # Install depencencies
 FROM base as prep
-COPY . ./prepping-ui/
-WORKDIR /prepping-ui/
-RUN yarn install --pure-lockfile
+WORKDIR /prepping-ui
 
-# Build packages
-FROM prep as build
+# Copy all files in the repo to the docker container /prepping-ui folder
+COPY . .
+
+# Install depencencies
+RUN yarn install --pure-lockfile
 
 # Build packages
 RUN yarn build:ui
 
 FROM base as artifact
-COPY --from=build /prepping-ui/build /ui/arcusOutput
+WORKDIR /ui
+
+RUN mkdir -p /ui/arcusOutput
+
+COPY --from=prep /prepping-ui/build /ui/arcusOutput
