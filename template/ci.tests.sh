@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 
 # Running tests, 
+yarn test:ci
+
 # making directory for results to be published in VSTS, 
+yarn mkdirp ./test-results
+
 # then moving tests results into that new folder
-# yarn test:ci && yarn mkdirp ../../test-results && yarn move-cli *.trx ../../test-results/test-results.trx
+yarn move-cli *.trx ./test-results/test-results.trx

@@ -10,7 +10,7 @@ COPY . .
 RUN yarn install --pure-lockfile
 
 # Build packages
-RUN yarn gated:ui
+RUN yarn build:ui
 
 FROM base as artifact
 WORKDIR /ui
