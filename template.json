@@ -32,7 +32,6 @@
         "scripts": {
             "version:bump": "standard-version",
             "build:ui": "yarn prep-shared-ui && react-scripts build && yarn finalize-shared-ui",
-            "gated:ui": "yarn test:ci && yarn build:ui",
             "test:ci": "cross-env CI=true react-scripts test --env=jsdom --reporters=default --reporters=jest-trx-results-processor",
             "test:watch": "react-scripts test --env=jsdom",
             "storybook": "start-storybook -p 9009 -s public",
