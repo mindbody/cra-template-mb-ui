@@ -18,5 +18,6 @@ FROM base as artifact
 WORKDIR /ui
 
 RUN mkdir -p /ui/arcusOutput
+RUN mkdir -p /ui/test-results
 
 COPY --from=prep /prepping-ui/build /ui/arcusOutput
