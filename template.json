@@ -1,54 +1,95 @@
 {
-    "package": {
-        "version": "1.0.0",
-        "dependencies": {
-            "@testing-library/jest-dom": "^5.0.2",
-            "@testing-library/react": "^9.4.0",
-            "@testing-library/user-event": "^7.1.2",
-            "@types/jest": "^24.9.1",
-            "@types/node": "^12.0.0",
-            "jest-canvas-mock": "^2.2.0",
-            "@storybook/preset-create-react-app": "^1.5.2",
-            "@storybook/addon-actions": "^5.3.9",
-            "@storybook/addon-knobs": "^5.3.9",
-            "@storybook/addon-links": "^5.3.9",
-            "@storybook/addons": "^5.3.9",
-            "@storybook/react": "^5.3.9",
-            "cra-shared-ui-scripts": "^1.5.1",
-            "cross-env": "^7.0.0",
-            "@commitlint/cli": "^8.3.5",
-            "@commitlint/config-conventional": "^8.3.4",
-            "commitizen": "^4.0.3",
-            "cz-conventional-changelog": "^3.1.0",
-            "standard-version": "^7.1.0",
-            "@types/react": "^16.9.0",
-            "@types/react-dom": "^16.9.0",
-            "node-sass": "^4.13.1",
-            "typescript": "~3.7.2",
-            "mkdirp": "^1.0.3",
-            "move-cli": "^1.2.1",
-            "jest-trx-results-processor": "^2.0.0"
-        },
-        "scripts": {
-            "version:bump": "standard-version",
-            "build:ui": "yarn prep-shared-ui && react-scripts build && yarn finalize-shared-ui",
-            "test:ci": "cross-env CI=true react-scripts test --env=jsdom --reporters=default --reporters=jest-trx-results-processor",
-            "test:watch": "react-scripts test --env=jsdom",
-            "storybook": "start-storybook -p 9009 -s public",
-            "storybook:build": "build-storybook -s public",
-            "commit": "git-cz"
-        },
-        "jest": {
-            "resetMocks": false,
-            "collectCoverageFrom": ["src/**/*.ts", "src/**/*.tsx", "!src/**/*.stories.tsx", "!src/**/*.d.ts"],
-            "moduleNameMapper": {
-                "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-            }
-        },
-        "config": {
-            "commitizen": {
-                "path": "./node_modules/cz-conventional-changelog"
-            }
-        }
+  "package": {
+    "version": "1.0.0",
+    "dependencies": {
+      "@testing-library/jest-dom": "^5.14.1",
+      "@testing-library/react": "^12.0.0",
+      "@testing-library/user-event": "^13.2.1",
+      "@types/jest": "^27.0.1",
+      "@types/node": "^16.7.13",
+      "jest-canvas-mock": "^2.3.1",
+      "cra-shared-ui-scripts": "^1.5.1",
+      "@storybook/preset-create-react-app": "^3.2.0",
+      "@storybook/addon-a11y": "^6.4.8",
+      "@storybook/addon-actions": "^6.4.8",
+      "@storybook/addon-essentials": "^6.4.8",
+      "@storybook/addon-links": "^6.4.8",
+      "@storybook/react": "^6.4.8",
+      "cross-env": "^7.0.3",
+      "@commitlint/cli": "^15.0.0",
+      "@commitlint/config-conventional": "^15.0.0",
+      "commitizen": "^4.2.4",
+      "cz-conventional-changelog": "^3.3.0",
+      "standard-version": "^9.3.2",
+      "@types/react": "^17.0.20",
+      "@types/react-dom": "^17.0.9",
+      "node-sass": "^7.0.0",
+      "typescript": "~4.5.2",
+      "mkdirp": "^1.0.4",
+      "move-cli": "^2.0.0",
+      "jest-trx-results-processor": "^2.2.0",
+      "eslint": "^7.30.0",
+      "eslint-config-airbnb": "^18.2.1",
+      "eslint-config-prettier": "^8.3.0",
+      "eslint-config-react-app": "^6.0.0",
+      "eslint-plugin-flowtype": "^6.1.1",
+      "eslint-plugin-import": "^2.25.2",
+      "eslint-plugin-jest": "^25.2.2",
+      "eslint-plugin-jsx-a11y": "^6.4.1",
+      "eslint-plugin-prettier": "^4.0.0",
+      "eslint-plugin-react": "^7.26.1",
+      "eslint-plugin-react-hooks": "^4.2.0",
+      "eslint-plugin-react-redux": "^3.3.2",
+      "eslint-plugin-test-selectors": "^1.3.2",
+      "prettier": "^2.4.1"
+    },
+    "scripts": {
+      "version:bump": "standard-version",
+      "build:ui": "yarn prep-shared-ui && react-scripts build && yarn finalize-shared-ui",
+      "test:ci": "cross-env CI=true react-scripts test --env=jsdom --reporters=default --reporters=jest-trx-results-processor",
+      "test:watch": "react-scripts test --env=jsdom",
+      "storybook": "start-storybook -p 9009 -s public",
+      "storybook:build": "build-storybook -s public",
+      "commit": "git-cz",
+      "check-types": "tsc --noemit",
+      "audit": "yarn run lint && yarn test a --watchAll=false",
+      "lint": "yarn run check-types && eslint --ext .ts --ext .tsx --ext .js .",
+      "lint:err": "yarn run lint -- --quiet",
+      "lint:fix": "yarn run prettier && npm run lint -- --fix --fix-type layout,suggestion,problem",
+      "prettier": "prettier '**/*.+(js|ts|tsx)' --write",
+      "prepare": "husky install"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    },
+    "jest": {
+      "resetMocks": false,
+      "collectCoverageFrom": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "!src/**/*.stories.tsx",
+        "!src/**/*.d.ts"
+      ],
+      "moduleNameMapper": {
+        "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+      }
+    },
+    "config": {
+      "commitizen": {
+        "path": "./node_modules/cz-conventional-changelog"
+      }
     }
+  }
 }
