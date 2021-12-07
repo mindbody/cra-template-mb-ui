@@ -2,7 +2,7 @@ variables:
   dockerFile: '**/ci.build.dockerfile'
   urlPath: '{Your url path here}'
 
-trigger: 
+trigger:
   - master
 
 resources:
@@ -16,7 +16,7 @@ stages:
 - stage: buildUI
   jobs:
   - template: /ci/public/shared_ui_build.yml@templateLibrary
-    parameters: 
+    parameters:
       dockerFile: $(dockerFile)
 
 - stage: DeployUi
@@ -27,4 +27,3 @@ stages:
       urlPath: $(urlPath)
 
 
-      

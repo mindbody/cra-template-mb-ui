@@ -1,4 +1,4 @@
-FROM node:12.14-alpine as base
+FROM node:14.17-alpine as base
 RUN apk update && apk add git && apk add bash && apk add curl
 
 # Copy all files over
@@ -16,6 +16,7 @@ FROM base as artifact
 WORKDIR /ui
 
 RUN mkdir -p /ui/arcusOutput
+RUN mkdir -p /ui/test-results
 
 COPY --from=prep /prepping-ui/build /ui/arcusOutput
 
